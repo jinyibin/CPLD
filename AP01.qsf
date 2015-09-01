@@ -1,0 +1,336 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2014 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 32-bit
+# Version 13.1.4 Build 182 03/12/2014 SJ Full Version
+# Date created = 15:00:14  April 10, 2015
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		AP01_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "MAX V"
+set_global_assignment -name DEVICE 5M2210ZF256I5
+set_global_assignment -name TOP_LEVEL_ENTITY top
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:00:14  APRIL 10, 2015"
+set_global_assignment -name LAST_QUARTUS_VERSION 13.1
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 125
+set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 256
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR "-1"
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_L3 -to board_id[0]
+set_location_assignment PIN_L4 -to board_id[1]
+set_location_assignment PIN_L5 -to board_id[2]
+set_location_assignment PIN_K5 -to board_id[3]
+set_location_assignment PIN_J5 -to clk_in
+set_location_assignment PIN_B7 -to cpld_can_rx
+set_location_assignment PIN_B1 -to cpld_can_tx
+set_location_assignment PIN_D16 -to cpld_i2c_scl
+set_location_assignment PIN_D15 -to cpld_i2c_sda
+set_location_assignment PIN_N16 -to cpu1_a5_wtdog
+set_location_assignment PIN_R14 -to cpu1_can_rx
+set_location_assignment PIN_P10 -to cpu1_can_tx
+set_location_assignment PIN_P15 -to cpu1_gpio[0]
+set_location_assignment PIN_N13 -to cpu1_gpio[1]
+set_location_assignment PIN_N14 -to cpu1_gpio[2]
+set_location_assignment PIN_L15 -to cpu1_gpio[3]
+set_location_assignment PIN_J16 -to cpu1_gpio[4]
+set_location_assignment PIN_J15 -to cpu1_gpio[5]
+set_location_assignment PIN_J14 -to cpu1_gpio[6]
+set_location_assignment PIN_P14 -to cpu1_gpio[7]
+set_location_assignment PIN_N12 -to cpu1_m4_wtdog
+set_location_assignment PIN_E15 -to cpu1_pwm[0]
+set_location_assignment PIN_F16 -to cpu1_pwm[1]
+set_location_assignment PIN_H14 -to cpu1_pwm[2]
+set_location_assignment PIN_G16 -to cpu1_pwm[3]
+set_location_assignment PIN_F14 -to cpu1_pwm[4]
+set_location_assignment PIN_G15 -to cpu1_pwm[5]
+set_location_assignment PIN_H15 -to cpu1_pwm[6]
+set_location_assignment PIN_R16 -to cpu1_pwm[7]
+set_location_assignment PIN_P12 -to cpu1_pwm[8]
+set_location_assignment PIN_R11 -to cpu1_pwm[9]
+set_location_assignment PIN_R13 -to cpu1_pwm_cap_en
+set_location_assignment PIN_P13 -to cpu1_rc_en
+set_location_assignment PIN_T8 -to cpu1_rst_n
+set_location_assignment PIN_H16 -to cpu1_spi_cs[0]
+set_location_assignment PIN_F15 -to cpu1_spi_cs[1]
+set_location_assignment PIN_L16 -to cpu1_spi_in
+set_location_assignment PIN_G14 -to cpu1_spi_out
+set_location_assignment PIN_E16 -to cpu1_spi_sck
+set_location_assignment PIN_M14 -to cpu1_uart1_rx
+set_location_assignment PIN_N15 -to cpu1_uart1_tx
+set_location_assignment PIN_K14 -to cpu1_uart2_rx
+set_location_assignment PIN_L14 -to cpu1_uart2_tx
+set_location_assignment PIN_T15 -to cpu1_uart3_rx
+set_location_assignment PIN_P11 -to cpu1_uart3_tx
+set_location_assignment PIN_M16 -to cpu1_uart4_rx
+set_location_assignment PIN_M15 -to cpu1_uart4_tx
+set_location_assignment PIN_P4 -to cpu2_a5_wtdog
+set_location_assignment PIN_K4 -to cpu2_can_rx
+set_location_assignment PIN_M3 -to cpu2_can_tx
+set_location_assignment PIN_T7 -to cpu2_gpio[0]
+set_location_assignment PIN_N1 -to cpu2_gpio[1]
+set_location_assignment PIN_M2 -to cpu2_gpio[2]
+set_location_assignment PIN_N2 -to cpu2_gpio[3]
+set_location_assignment PIN_P2 -to cpu2_gpio[4]
+set_location_assignment PIN_R3 -to cpu2_gpio[5]
+set_location_assignment PIN_T5 -to cpu2_gpio[6]
+set_location_assignment PIN_R6 -to cpu2_gpio[7]
+set_location_assignment PIN_N5 -to cpu2_m4_wtdog
+set_location_assignment PIN_L2 -to cpu2_pwm[0]
+set_location_assignment PIN_M1 -to cpu2_pwm[1]
+set_location_assignment PIN_K1 -to cpu2_pwm[2]
+set_location_assignment PIN_J1 -to cpu2_pwm[3]
+set_location_assignment PIN_H1 -to cpu2_pwm[4]
+set_location_assignment PIN_G2 -to cpu2_pwm[5]
+set_location_assignment PIN_J2 -to cpu2_pwm[6]
+set_location_assignment PIN_J3 -to cpu2_pwm[7]
+set_location_assignment PIN_N6 -to cpu2_pwm[8]
+set_location_assignment PIN_P5 -to cpu2_pwm[9]
+set_location_assignment PIN_M4 -to cpu2_pwm_cap_en
+set_location_assignment PIN_H3 -to cpu2_rc_en
+set_location_assignment PIN_P8 -to cpu2_rst_n
+set_location_assignment PIN_E3 -to cpu2_spi_cs[0]
+set_location_assignment PIN_E2 -to cpu2_spi_cs[1]
+set_location_assignment PIN_D3 -to cpu2_spi_in
+set_location_assignment PIN_E1 -to cpu2_spi_out
+set_location_assignment PIN_F1 -to cpu2_spi_sck
+set_location_assignment PIN_R4 -to cpu2_uart1_rx
+set_location_assignment PIN_N3 -to cpu2_uart1_tx
+set_location_assignment PIN_F2 -to cpu2_uart2_rx
+set_location_assignment PIN_G1 -to cpu2_uart2_tx
+set_location_assignment PIN_G3 -to cpu2_uart3_rx
+set_location_assignment PIN_H2 -to cpu2_uart3_tx
+set_location_assignment PIN_L1 -to cpu2_uart4_rx
+set_location_assignment PIN_K2 -to cpu2_uart4_tx
+set_location_assignment PIN_T10 -to gpio[0]
+set_location_assignment PIN_R9 -to gpio[1]
+set_location_assignment PIN_R5 -to gpio[2]
+set_location_assignment PIN_N7 -to gpio[3]
+set_location_assignment PIN_R12 -to led_yellow
+set_location_assignment PIN_T12 -to led_green
+set_location_assignment PIN_A13 -to hall_in[0]
+set_location_assignment PIN_A7 -to hall_in[1]
+set_location_assignment PIN_R10 -to imu_uart1_rx
+set_location_assignment PIN_T11 -to imu_uart1_tx
+set_location_assignment PIN_N8 -to imu_uart2_rx
+set_location_assignment PIN_P7 -to imu_uart2_tx
+set_location_assignment PIN_R8 -to led
+set_location_assignment PIN_B9 -to pwm_out[0]
+set_location_assignment PIN_A9 -to pwm_out[1]
+set_location_assignment PIN_B11 -to pwm_out[2]
+set_location_assignment PIN_C11 -to pwm_out[3]
+set_location_assignment PIN_B12 -to pwm_out[4]
+set_location_assignment PIN_C12 -to pwm_out[5]
+set_location_assignment PIN_C9 -to pwm_out[6]
+set_location_assignment PIN_A10 -to pwm_out[7]
+set_location_assignment PIN_B10 -to pwm_out[8]
+set_location_assignment PIN_C10 -to pwm_out[9]
+set_location_assignment PIN_C15 -to rc_en_in
+set_location_assignment PIN_B16 -to rc_pwm_in[0]
+set_location_assignment PIN_C14 -to rc_pwm_in[1]
+set_location_assignment PIN_A15 -to rc_pwm_in[2]
+set_location_assignment PIN_B14 -to rc_pwm_in[3]
+set_location_assignment PIN_C13 -to rc_pwm_in[4]
+set_location_assignment PIN_B13 -to rc_pwm_in[5]
+set_location_assignment PIN_J12 -to rst_n
+set_location_assignment PIN_A2 -to rsv_io[0]
+set_location_assignment PIN_B4 -to rsv_io[1]
+set_location_assignment PIN_B3 -to rsv_io[2]
+set_location_assignment PIN_C4 -to rsv_io[3]
+set_location_assignment PIN_C5 -to rsv_io[4]
+set_location_assignment PIN_A4 -to rsv_io[5]
+set_location_assignment PIN_C6 -to rsv_io[6]
+set_location_assignment PIN_C7 -to rsv_io[7]
+set_location_assignment PIN_E4 -to sonar_out
+set_location_assignment PIN_F3 -to sonar_in
+set_location_assignment PIN_A5 -to uart1_rx
+set_location_assignment PIN_C3 -to uart1_tx
+set_location_assignment PIN_B5 -to uart2_rx
+set_location_assignment PIN_C2 -to uart2_tx
+set_location_assignment PIN_A6 -to uart3_rx
+set_location_assignment PIN_D2 -to uart3_tx
+set_location_assignment PIN_B6 -to uart4_rx
+set_location_assignment PIN_D1 -to uart4_tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to board_id[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to board_id[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to board_id[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to board_id[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to clk_in
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpld_can_rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpld_can_tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpld_i2c_scl
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpld_i2c_sda
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_a5_wtdog
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_can_rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_can_tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_gpio[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_gpio[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_gpio[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_gpio[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_gpio[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_gpio[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_gpio[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_gpio[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_m4_wtdog
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_pwm[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_pwm[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_pwm[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_pwm[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_pwm[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_pwm[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_pwm[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_pwm[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_pwm[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_pwm[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_pwm_cap_en
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_rc_en
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_rst_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_spi_cs[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_spi_cs[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_spi_in
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_spi_out
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_spi_sck
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_uart1_rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_uart1_tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_uart2_rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_uart2_tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_uart3_rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_uart3_tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_uart4_rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu1_uart4_tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_a5_wtdog
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_can_rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_can_tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_gpio[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_gpio[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_gpio[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_gpio[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_gpio[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_gpio[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_gpio[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_gpio[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_m4_wtdog
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_pwm[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_pwm[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_pwm[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_pwm[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_pwm[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_pwm[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_pwm[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_pwm[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_pwm[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_pwm[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_pwm_cap_en
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_rc_en
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_rst_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_spi_cs[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_spi_cs[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_spi_in
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_spi_out
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_spi_sck
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_uart1_rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_uart1_tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_uart2_rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_uart2_tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_uart3_rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_uart3_tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_uart4_rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cpu2_uart4_tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to gpio[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to gpio[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to gpio[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to gpio[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to led_yellow
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to led_green
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to hall_in[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to hall_in[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to imu_uart1_rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to imu_uart1_tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to imu_uart2_rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to imu_uart2_tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to led
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to pwm_out[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to pwm_out[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to pwm_out[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to pwm_out[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to pwm_out[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to pwm_out[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to pwm_out[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to pwm_out[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to pwm_out[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to pwm_out[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rc_en_in
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rc_pwm_in[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rc_pwm_in[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rc_pwm_in[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rc_pwm_in[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rc_pwm_in[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rc_pwm_in[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rst_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rsv_io[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rsv_io[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rsv_io[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rsv_io[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rsv_io[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rsv_io[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rsv_io[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rsv_io[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sonar_out
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sonar_in
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to uart1_rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to uart1_tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to uart2_rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to uart2_tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to uart3_rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to uart3_tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to uart4_rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to uart4_tx
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
+set_global_assignment -name PRE_FLOW_SCRIPT_FILE "quartus_sh:update_version.tcl"
+set_global_assignment -name VERILOG_FILE version_reg.v
+set_global_assignment -name VERILOG_FILE top.v
+set_global_assignment -name VERILOG_FILE pwm_gen_servo.v
+set_global_assignment -name VERILOG_FILE pwm_cap_rc.v
+set_global_assignment -name VERILOG_FILE spi_slave_transceiver.v
+set_global_assignment -name VERILOG_FILE spi_slave_reg.v
+set_global_assignment -name VERILOG_FILE sonar_ctrl.v
+set_global_assignment -name CDF_FILE output_files/Chain2.cdf
+set_global_assignment -name VERILOG_FILE pwm_gen_rsv.v
+set_global_assignment -name SEARCH_PATH output_files/ -tag from_archive
