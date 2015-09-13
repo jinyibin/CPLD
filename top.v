@@ -339,7 +339,7 @@ reg [1:0] cpu2_pwm_update;
 	  //assign cpu2_rst_n = 1'b1;
 //---------------------------------------------------------------------------------------------------------------
    /* manual operation switch */
-	assign pwm_out[5:0] = rc_en_buf[1]? rc_pwm_in : pwm_out_auto;
+	assign pwm_out[5:0] = (rc_en_buf[1]|cpu1_reg_ctrl[0])? rc_pwm_in : pwm_out_auto;
 //---------------------------------------------------------------------------------------------------------------
    /* CPU Failure switch */
    reg [14:0]   pwm_width_ch1;
@@ -394,7 +394,7 @@ reg [1:0] cpu2_pwm_update;
 	assign uart1_tx      = (cpu1_failure == 1'b0)? cpu1_uart1_tx      : cpu2_uart1_tx     ;
 	//assign uart1_tx      = (cpu1_failure == 1'b0)? cpu1_pwm[4]         : cpu2_pwm[4]     ;
    assign uart2_tx      = (cpu1_failure == 1'b0)? cpu1_uart2_tx      : cpu2_uart2_tx     ;
-	assign uart3_tx      = ((cpu1_reg_ctrl==1'b0)||(cpu1_failure == 1'b0))? cpu1_uart3_tx      : cpu2_uart3_tx     ;
+	assign uart3_tx      = ((cpu1_reg_ctrl[15]==1'b0)||(cpu1_failure == 1'b0))? cpu1_uart3_tx      : cpu2_uart3_tx     ;
 	//assign uart4_tx      = (cpu1_failure == 1'b0)? cpu1_uart4_tx      : cpu2_uart4_tx     ;
    assign imu_uart1_tx  = (cpu1_failure == 1'b0)? cpu1_uart4_tx      : cpu2_uart4_tx     ;  
 	assign cpld_can_tx   = (cpu1_failure == 1'b0)? cpu1_can_tx        : cpu2_can_tx       ;
