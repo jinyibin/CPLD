@@ -50,6 +50,8 @@ module spi_slave_reg
   output reg [15:0]  reg_pwm_width_ch7,
   output reg [15:0]  reg_pwm_period8,
   output reg [15:0]  reg_pwm_width_ch8,
+  
+  input  wire        spi_clk_error,
 				  
   output reg [1:0]   reg_sonar_control,// Sonar enable or stop,default enable
   input  wire[15:0]  reg_sonar_data   ,// Sonar data 
@@ -97,6 +99,8 @@ module spi_slave_reg
 				  SONAR_DATA_ADDR    =   'h001B , // Sonar data ,read only
 				  VERSION_LOW_ADDR   =   'h001D , // Version Reg lower 16bits
 				  VERSION_HIGH_ADDR  =   'h001E , // version reg higher 16bits
+				  
+				  FPGA_STATUS_ADDR   =   'h001F , 
 				  
 				  PWM_PERIOD7_ADDR   =   'h0020 , // PWM signal period
 				  PWM_WIDTH_CH7_ADDR =   'h0021 , // PWM signal pulse width for channel7				  
@@ -194,6 +198,32 @@ module spi_slave_reg
 		 else
 		  reg_address <= reg_address;	
 	  end 
+//---------------------------------------------------------------------------------------------------------------	  
+reg [7:0]  error1;
+reg [7:0]  error2;
+reg        spi_clk_error_buf;
+wire       spi_clk_error_edge;
+always @ (posedge clk or negedge rst_n)
+     if(!rst_n)
+	    spi_clk_error_buf <= 1'b0;
+	  else begin
+	         spi_clk_error_buf <= spi_clk_error;
+			 end	
+assign spi_clk_error_edge=spi_clk_error & (~spi_clk_error_buf);
+
+always @ (posedge clk or negedge rst_n)
+     if(!rst_n)
+	    error1 <= 8'd0;
+	  else if(spi_clk_error_edge)
+	    error1 <= error1 + 1'b1;
+
+
+always @ (posedge clk or negedge rst_n)
+     if(!rst_n)
+	    error2 <= 8'd0;
+	  else if(frame_lost_error)
+	    error2 <= error2 + 1'b1;
+			 
 //---------------------------------------------------------------------------------------------------------------	
        /*  write register  */
   always @ (posedge clk or negedge rst_n)
@@ -270,6 +300,7 @@ module spi_slave_reg
 		     else if(reg_address==PWM_WIDTH_CH7_ADDR  )           tx_data <= reg_pwm_width_ch7 ;
 			  else if(reg_address==PWM_PERIOD8_ADDR     )          tx_data <= reg_pwm_period8    ;
 		     else if(reg_address==PWM_WIDTH_CH8_ADDR  )           tx_data <= reg_pwm_width_ch8 ;
+			  else if(reg_address==FPGA_STATUS_ADDR  )             tx_data <= {error2,error1} ;
 			end
 		 else tx_data <= 16'd0;
 	 end

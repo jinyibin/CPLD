@@ -56,22 +56,22 @@ module spi_slave_transceiver
   assign negedge_spi_clk = spi_clk_buf[2] & (~spi_clk_buf[1]) ; //falling edge of spi clock
 //---------------------------------------------------------------------------------------------------------------
               /*  spi clock error detect  */
-  reg  [7:0]   clk_error_cnt  ;  
+  reg  [11:0]   clk_error_cnt  ;  
  
   always @ (posedge clk or negedge rst_n)
      begin
 	     if(!rst_n)
-		     clk_error_cnt <= 8'd0;
+		     clk_error_cnt <= 12'd0;
 		  else if(spi_cs_n_buf[2]||spi_clk_error)
-				 clk_error_cnt <= 8'd0;
+				 clk_error_cnt <= 12'd0;
 		  else begin
 		         if(posedge_spi_clk)
-				      clk_error_cnt <= 8'd0;
+				      clk_error_cnt <= 12'd0;
 			      else
-				      clk_error_cnt <= clk_error_cnt + 8'd1;
+				      clk_error_cnt <= clk_error_cnt + 12'd1;
 				 end		  
 	  end  
-  assign spi_clk_error = (clk_error_cnt== 8'd240) ? 1'b1 : 1'b0;/* spi_clk_error is asserted if spi clock is lost 
+  assign spi_clk_error = (clk_error_cnt== 12'd2400) ? 1'b1 : 1'b0;/* spi_clk_error is asserted if spi clock is lost 
                                                                  for 240 clk cycles */	
 //---------------------------------------------------------------------------------------------------------------
   reg [15:0]  rx_shift_reg     ;// receiver shift register

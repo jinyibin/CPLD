@@ -425,7 +425,7 @@ reg [1:0] cpu2_pwm_update;
 	assign rsv_io[1] = cpu1_spi_sck;
 	assign rsv_io[2] = cpu1_spi_in;
 	assign rsv_io[3] = cpu1_spi_out;	
-	assign rsv_io[4] = cpu1_pwm[1];
+	assign rsv_io[4] = cpu1_spi_frame_lost_error|cpu1_spi_clk_error;
 //---------------------------------------------------------------------------------------------------------------
    /* cpld local time */
 	reg  [15:0] cpld_local_time ;
@@ -483,6 +483,7 @@ reg [1:0] cpu2_pwm_update;
 											  .reg_pwm_width_ch7(cpu1_pwm_width_ch7),
 											  .reg_pwm_period8(cpu1_pwm_period8),
 											  .reg_pwm_width_ch8(cpu1_pwm_width_ch8),
+											  .spi_clk_error(cpu1_spi_clk_error),
 											  .version(version)
                                   );
 //---------------------------------------------------------------------------------------------------------------	 
