@@ -7,6 +7,6 @@ module version_reg (clock, reset, data_out);
         if (!reset)
             data_out <= 32'h000000;
         else
-            data_out <= 32'hE6987D;
+            data_out <= 32'hE6C1E7;
     end
 endmodule

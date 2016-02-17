@@ -242,6 +242,7 @@ module top
  //-------------------------------------------------------------------------------------------------------------
            /* 1MHz sampling of rc_en_in  */
 	 reg[1:0]     rc_en_buf;
+	 wire         rc_en_processed;
     always @ (posedge clk_in or negedge rst_n_buf[1])
 	   begin
 		   if(!rst_n_buf[1])
@@ -262,8 +263,8 @@ module top
 					  end
 		end
 		
-		assign cpu1_rc_en = rc_en_buf[1];
-		assign cpu2_rc_en = rc_en_buf[1];
+		assign cpu1_rc_en = rc_en_processed;
+		assign cpu2_rc_en = rc_en_processed;
 //---------------------------------------------------------------------------------------------------------------
 reg [1:0] cpu1_pwm_update;
 reg [1:0] cpu2_pwm_update;
@@ -339,7 +340,8 @@ reg [1:0] cpu2_pwm_update;
 	  //assign cpu2_rst_n = 1'b1;
 //---------------------------------------------------------------------------------------------------------------
    /* manual operation switch */
-	assign pwm_out[5:0] = (rc_en_buf[1]|cpu1_reg_ctrl[0])? rc_pwm_in : pwm_out_auto;
+	assign pwm_out[5:0] = (rc_en_processed|cpu1_reg_ctrl[0])? rc_pwm_in : pwm_out_auto;
+	assign pwm_out[6]= rc_en_processed;
 //---------------------------------------------------------------------------------------------------------------
    /* CPU Failure switch */
    reg [14:0]   pwm_width_ch1;
@@ -584,7 +586,7 @@ reg [1:0] cpu2_pwm_update;
                          .clk(clk_in)                 ,  
                          .rst_n(rst_n_buf[1])                , 
 								 .pwm_clk(pwm_clk_delay[1])   ,
-                         .rc_en_in(rc_en_buf)         ,  
+                         .rc_en_in(rc_en_processed)         ,  
                          .pulse_width_ch1(rc_pulse_width_ch1)   ,  
                          .pulse_width_ch2(rc_pulse_width_ch2)   ,
                          .pulse_width_ch3(rc_pulse_width_ch3)   ,
@@ -602,7 +604,7 @@ reg [1:0] cpu2_pwm_update;
 								 .pwm_clk(pwm_clk_delay[1])   ,
                          .pulse_period(pwm_period7)         ,  
                          .pulse_width_ch(pwm_width_ch7)   ,  
-                         .pwm_out        (pwm_out[6])   
+                         .pwm_out        (pwm_out[8])   
                         );
 								
    pwm_gen_rsv pwm_gen_rsv2(
@@ -623,6 +625,16 @@ sonar_ctrl  sonar(
                    .sonar_data    (sonar_data       ),// sonar PWM pulse width(us)
                    .sonar_out     (sonar_out        ),// sonar enable:low level stop sonar ranging
                    .sonar_in      (sonar_in         ) // sonar PWM pulse output
+);
+//---------------------------------------------------------------------------------------------------------------	
+ rc_en_process   rc_en_process(
+                   .clk  (clk_in),
+                   .rst_n(rst_n_buf[1]),
+	                .pwm_clk(pwm_clk_delay[1] ),        // 1MHz clock to sample pwm pulse
+	
+	                .rc_en_in(rc_en_buf[1]),          // pwm signal,14ms period,pulse width 1.1ms---1.9ms
+	                .rc_en_out(rc_en_processed)       // high level active
+
 );
 //---------------------------------------------------------------------------------------------------------------	
 version_reg ver(
