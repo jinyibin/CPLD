@@ -340,8 +340,9 @@ reg [1:0] cpu2_pwm_update;
 	  //assign cpu2_rst_n = 1'b1;
 //---------------------------------------------------------------------------------------------------------------
    /* manual operation switch */
-	assign pwm_out[5:0] = (rc_en_processed|cpu1_reg_ctrl[0])? rc_pwm_in : pwm_out_auto;
-	assign pwm_out[6]= rc_en_processed;
+	//assign pwm_out[5:0] = (rc_en_processed|cpu1_reg_ctrl[0])? rc_pwm_in : pwm_out_auto;
+	assign pwm_out[5:0]= pwm_out_auto;
+	//assign pwm_out[6]= rc_en_processed;
 //---------------------------------------------------------------------------------------------------------------
    /* CPU Failure switch */
    reg [14:0]   pwm_width_ch1;
@@ -604,7 +605,7 @@ reg [1:0] cpu2_pwm_update;
 								 .pwm_clk(pwm_clk_delay[1])   ,
                          .pulse_period(pwm_period7)         ,  
                          .pulse_width_ch(pwm_width_ch7)   ,  
-                         .pwm_out        (pwm_out[8])   
+                         .pwm_out        (pwm_out[6])   
                         );
 								
    pwm_gen_rsv pwm_gen_rsv2(

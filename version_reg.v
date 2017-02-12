@@ -5,8 +5,8 @@ module version_reg (clock, reset, data_out);
     reg [31:0] data_out;
     always @ (posedge clock or negedge reset) begin
         if (!reset)
-            data_out <= 32'h000000;
+            data_out <= 32'h0000000;
         else
-            data_out <= 32'hE6C1E7;
+            data_out <= 32'h103B924;
     end
 endmodule

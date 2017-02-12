@@ -233,16 +233,16 @@ always @ (posedge clk or negedge rst_n)
 					reg_cpu_mode      <= 4'd0;		
 		         reg_control       <= 16'd0;			
                reg_pwm_period    <= 16'd20000;// default servo pwm period,20ms
-		         reg_pwm_width_ch1 <= 16'd1500;
-		         reg_pwm_width_ch2 <= 16'd1500;
-		         reg_pwm_width_ch3 <= 16'd1500;
-		         reg_pwm_width_ch4 <= 16'd1500;
-		         reg_pwm_width_ch5 <= 16'd1500;
-		         reg_pwm_width_ch6 <= 16'd1500;		 
+		         reg_pwm_width_ch1 <= 16'd0;
+		         reg_pwm_width_ch2 <= 16'd0;
+		         reg_pwm_width_ch3 <= 16'd0;
+		         reg_pwm_width_ch4 <= 16'd0;
+		         reg_pwm_width_ch5 <= 16'd0;
+		         reg_pwm_width_ch6 <= 16'd0;		 
 		         reg_sonar_control <= 2'b00;   // default sonar enable
-               reg_pwm_period7   <= 16'd0;
+               reg_pwm_period7   <= 16'd20000;
 		         reg_pwm_width_ch7 <= 16'd0;	
-	            reg_pwm_period8   <= 16'd0;
+	            reg_pwm_period8   <= 16'd20000;
 		         reg_pwm_width_ch8 <= 16'd0;				
 		      end
 		 else if((state == WRITE) && rx_data_ready)

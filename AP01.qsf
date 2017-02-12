@@ -334,3 +334,4 @@ set_global_assignment -name VERILOG_FILE sonar_ctrl.v
 set_global_assignment -name CDF_FILE output_files/Chain2.cdf
 set_global_assignment -name VERILOG_FILE pwm_gen_rsv.v
 set_global_assignment -name SEARCH_PATH output_files/ -tag from_archive
+set_global_assignment -name VERILOG_FILE rc_en_process.v
